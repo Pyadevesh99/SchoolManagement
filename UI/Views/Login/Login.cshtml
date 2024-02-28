@@ -1,0 +1,63 @@
+﻿@model Model.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@* <h1>Login</h1> *@
+
+@* <div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div> *@
+
+@* <div>
+    <a asp-action="Index">Back to List</a>
+</div> *@
+<head>
+    <title>LoginPage</title>
+    <linK rel="stylesheet" type="text/css" href="~/css/LoginPage/Login.css" />
+</head>
+<body>
+    <div class="tittle_Login">
+        <h1 id="tittle_id">Login</h1>
+    </div>
+    <div class="Login_div">
+        <form asp-action="Login">
+        <div class="login_field">
+            <label id="label_UserName" asp-for="UserName"> USERNAME</label>
+            <input id="UserName_Id" type="text" placeholder="Enter UserName" name="UserName" required />
+            <br /><br />
+            <label asp-for="Password"> PASSWORD</label>
+            <input id="UserName_Password" type="password" placeholder="Enter Password" name="Password" required />
+        </div>
+        <div class="btn_login_class">
+            <input id="Login_btn" type="submit" value="Login" class="submit button" />
+                <a id="_forgotpassword" asp-controller="Register" asp-action="Register">forgotPassword</a>
+            <br />
+                <a id="_RegisterNow" asp-controller="Register" asp-action="Register">Register Now</a>
+        </div>
+        </form>
+    </div>
+</body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

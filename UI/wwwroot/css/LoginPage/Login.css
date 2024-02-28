@@ -1,0 +1,83 @@
+﻿* {
+    margin: 10px;
+    padding: 0;
+}
+body {
+    background-image: url(LoginPage.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment : fixed;
+}
+
+.tittle_Login {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size : 30px;
+}
+#tittle_id {
+    color: slateblue;
+    text-shadow: 2px 2px Red;
+    font-family :sans-serif;
+}
+.Login_div {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 800px;
+    height: 200px;
+}
+.login_field {
+    font-size: 25px;
+    font-weight: bold;
+    padding : 2px 2px 30px 25px;
+    color : cadetblue;
+    text-shadow : 1px 1px red;
+}
+#UserName_Id {
+    padding: 15px 10px 10px;
+    box-shadow: 1px 1px green;
+    border-radius: 15px;
+    width : 400px;
+}
+#UserName_Password {
+    padding: 15px 10px 10px 10px;
+    box-shadow: 1px 1px green;
+    border-radius: 15px;
+    width: 400px;
+}
+.btn_login_class {
+    font-size: 15px;
+    margin-left : 20%;
+}
+#Login_btn {
+    font-size: 25px;
+    width: 90px;
+    height:40px;
+    color: red;
+    border-radius: 10px;
+    border-color: green;
+    background-color: chartreuse;
+}
+#_forgotpassword{
+    color : blue;
+    text-decoration : underline;
+}
+#_RegisterNow {
+    color: blue;
+    text-decoration: underline;
+    margin-left : 19%;
+}
+input {
+    color: green;
+    text-align : center;
+}
+
+::placeholder {
+    color: deepskyblue;
+    font-size: 1rem;
+}

@@ -1,0 +1,64 @@
+﻿@using Model.ViewModels;
+@model Model.ViewModels.ProfileViewmodel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+@* <div>
+    <h4>ProfileViewmodel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+    </dl>
+</div> *@
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <linK rel="stylesheet" type="text/css" href="~/css/Profile/Profile.css" asp-append-version="true" />
+</head>
+<body>
+    @{
+        _NavbarViewModel _navbarViewModel = new _NavbarViewModel()
+        {
+            Role = int.Parse(Model.Role)
+        };
+    }
+    <div>
+        @Html.Partial("../PartialView/_Navbar",_navbarViewModel);
+    </div>
+    <div class="position-relative">
+        <h1 class="_ProfileHeading"> PROFILE DETAILS</h1>
+        <hr />
+        <div class="p-2">
+            <h1 class="_UserDetails"> NAME : @Model.Name</h1>
+            <hr />
+            <h1> USERNAME : @Model.UserName</h1>
+            <hr />
+            <h1 class="_UserDetails"> ROLE : @Model.Role</h1>
+            <hr />
+            <h1> Address : @Model.Address</h1>
+            <hr />
+        </div>
+        <div class="_btnEdit">
+            <a class="btn btn-primary" asp-action="" asp-controller=""> Edit Profile</a>
+            <a class="btn btn-Secondary" asp-action="" asp-controller=""> Logout</a>
+        </div>
+    </div>
+</body>

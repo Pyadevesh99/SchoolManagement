@@ -1,0 +1,46 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+._ProfileHeading{
+    text-align: center;
+    color : darkviolet;
+    text-shadow : 2px 2px red;
+}
+.position-relative {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    outline: solid 1px black;
+    box-shadow : 2px 2px 2px 2px Blue;
+    background-color: black;
+    border-radius: 40px;
+}
+.p-2 h1 {
+    color: red;
+    padding-left: 60px;
+    text-shadow : 2px 2px Blue;
+}
+._UserDetails {
+    text-transform: uppercase;
+}
+.position-relative hr {
+    color: #ffff00;
+    height: 2px;
+}
+._btnEdit {
+    text-align: center;
+    padding:0px 0px 20px 0px;
+}
+._btnEdit a{
+    border-radius : 30px;
+    color: red;
+    background-color: blanchedalmond;
+    box-shadow: 2px 2px 2px 2px red;
+}
+._btnEdit a:hover{
+    background-color : green;
+    transition: ease 0.5s;
+    transform:scale(1.2) rotate(-1deg);
+    box-shadow : none;
+}

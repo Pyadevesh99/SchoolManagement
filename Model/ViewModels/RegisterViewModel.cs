@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Entittes
+namespace Model.ViewModels
 {
-    public class Users
+    public class RegisterViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,6 +14,5 @@ namespace Data.Entittes
         public string Password { get; set; }
         public int Role { get; set; }
         public string Address { get; set; }
-
     }
 }

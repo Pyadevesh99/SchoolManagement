@@ -1,0 +1,40 @@
+﻿.{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+
+}
+body h1{
+    text-align: center;
+    margin-top: 30px;
+    color: cyan;
+    text-transform: uppercase;
+    text-shadow: 2px 2px black;
+}
+body hr{
+    color:red;
+}
+.row{
+    margin-top:5%;
+    margin-left : 40%;
+}
+.form-group{
+    width: 500px;
+}
+.form-group label{
+    text-transform: uppercase;
+    font-weight : bold;
+    color:orangered;
+    font-size: 18px;
+    text-shadow: 2px 2px green;
+}
+.form-group input{
+    height: 40px;
+}
+.btn btn-primary{
+    margin-top: 10%;
+}
+._Backtolist{
+    text-align:center;
+}

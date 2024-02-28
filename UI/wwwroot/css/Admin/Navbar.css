@@ -1,0 +1,38 @@
+﻿*{
+    margin : 0px;
+    padding : 0px;
+}
+body{
+    position : fixed;
+}
+/*.container-fluid {
+    padding: 0px 60px 0 30px;
+    justify-content: space-evenly;
+}*/
+.nav-link {
+    margin : 20px;
+    margin-left : 40px;
+    color : black;
+    text-transform : uppercase;
+    font-weight : bold;
+    color : orangered;
+    opacity: 4;
+}
+.container-fluid button{
+    border-radius : 20px;
+}
+#Btn_Profile {
+    margin-right: 10px;
+    font-weight: bold;
+    color: orangered;
+    background-color : aqua;
+    opacity : 0.8;
+}
+#Btn_Profile:hover{
+    background-color : lightgreen;
+    color : mediumblue;
+    opacity : 1;
+}
+.nav-link:hover {
+    font-size: 17px;
+}

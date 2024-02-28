@@ -1,0 +1,25 @@
+﻿@model Model.ViewModels._NavbarViewModel
+@{
+    ViewData["Title"] = "Users";
+}
+<head>
+    <title>Homepage</title>
+@*     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <linK rel="stylesheet" type="text/css" href="~/css/Homepage/HomePage.css" asp-append-version="true" />
+</head>
+<body>
+    <div>
+        @Html.Partial("../PartialView/_Navbar",Model);
+        <div class="_tittle">
+            <h1> Welcome To</h1>
+            <br />
+            <h2>School Management System</h2>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_element">
+            <h3>Designed and Devloped By</h3>
+            <h3>Raj Kumar</h3>
+        </div>
+    </div>
+</body>

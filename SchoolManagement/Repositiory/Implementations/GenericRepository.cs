@@ -21,57 +21,102 @@ namespace Data.Repositiory.Implementations
 
         public void Add(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Add(entity);
         }
 
-        public Task<T> AddSync(T entity)
+        public async Task<T> AddSync(T entity)
         {
-            throw new NotImplementedException();
+            await _dbSet.AddAsync(entity);
+            return entity;
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            if(_context.Entry(entity).State == EntityState.Detached)
+            {
+                _dbSet.Attach(entity);
+            }
+            _dbSet.Remove(entity);
         }
 
-        public Task<T> DeleteAsync(T entity)
+        public async Task<T> DeleteAsync(T entity)
         {
-            throw new NotImplementedException();
+            if (_context.Entry(entity).State == EntityState.Detached)
+            {
+                _dbSet.Attach(entity);
+            }
+            _dbSet?.Remove(entity);
+            return entity;
         }
 
         public void DeleteById(object id)
         {
-            throw new NotImplementedException();
+            T EntityToDelete = _dbSet.Find(id);
+            Delete(EntityToDelete);
+        }
+
+        #region IDisposable
+        private bool Disposed = false;
+
+
+        protected virtual void Dispose( bool disposing)
+        {
+            if (!this.Disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            this.Disposed = true;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
-        public Task<IEnumerable<T>> GetAll(System.Linq.Expressions.Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperty = null)
+        #endregion
+        public async Task<IEnumerable<T>> GetAll(System.Linq.Expressions.Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperty = null)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _dbSet;
+            if(filter != null)
+                query = query.Where(filter);
+            if(includeProperty != null)
+            {
+                foreach (var item in includeProperty.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProperty);
+                }
+            }
+            if (orderBy != null)
+                return await orderBy(query).ToListAsync();
+            return await query.ToListAsync();
         }
 
         public T GetById(object id)
         {
-            throw new NotImplementedException();
+            return _dbSet.Find(id);
         }
 
-        public Task<T> GetByIdAsync(object id)
+        public async Task<T> GetByIdAsync(object id)
         {
-            throw new NotImplementedException();
+            return await _dbSet.FindAsync(id);
         }
 
         public void update(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
-        public Task<T> UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            return entity;
         }
+
     }
 }
